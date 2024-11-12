@@ -8,7 +8,7 @@ class ItemDatabase {
 
   FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  // Grava um novo contato no Firestore:
+  // Grava um novo item no Firestore:
   void insertItem(Item item) {
     _firestore.collection('item').add(
         {
@@ -17,6 +17,11 @@ class ItemDatabase {
           'qtde': item.qtde,
         }
     );
+  }
+
+  // Apaga um item com um certo id:
+  void deleteItem(String id) {
+    _firestore.collection('item').doc(id).delete();
   }
 
 }

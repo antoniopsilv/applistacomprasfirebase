@@ -52,7 +52,7 @@ class DeleteItem extends StatelessWidget {
                     onPressed: () {
                       debugPrint("\n\n\n  Id do Item a ser removido" +itemId.toString());
                      // Future id = itemDatabase.deleteItem(itemId!);
-
+                      itemDatabase.deleteItem(itemId!);
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                         content: Text(
                           item + " removido!",
